@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Reviews</title>
+</head>
+<body>
+    <form action="/reviews" method="POST">
+        <input type="number" placeholder="Out of 10" name="rating" max="10" required><br>
+        <input type="text" placeholder="Name" name="name" required><br>
+        <textarea rows="5" cols="20" placeholder="Review" name="review" required></textarea><br>
+        <input type="text" placeholder="Monument" name="monument" required><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <% if(comment.length > 0) { %>
+        <% for (let com of comment) { %>
+            <div class="toRemove">
+                <li><%= com.rating %>
+                    <span id="review"><br> &emsp;<%= com.review %></span>
+                    <span id="name"><br> &emsp;<%= com.name %></span>
+                    <span id="monument" class="forSearch"><br> &emsp;<%= com.monument %></span>
+                </li>
+            </div>
+        <% } %>
+    <% } else { %>
+        <li>No reviews</li>
+    <% } %>
+
+    <br><br><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Filter By Monumnet">
+
+    <script>
+        function myFunction() {
+        var input, filter, ul, li, a, i, txtValue;
+        input = document.getElementById("myInput");
+        toRem = document.querySelectorAll(".toRemove");
+        filter = input.value.toUpperCase(); 
+        li = document.querySelectorAll(".forSearch");
+        for (i = 0; i < li.length; i++) {
+            a = li[i];
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                toRem[i].style.display = "";
+            } else {
+                toRem[i].style.display = "none";
+            }
+        }
+    }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+    <style>
+.top-wrapper {
+  padding: 180px 0 100px 0;
+  background-size: cover;
+  text-align: center;
+}
+
+.container {
+  width: 1170px;
+  margin: 0 auto;
+}
+
+.top-wrapper h1 h2{
+  opacity: 0.7;
+  font-size: 45px;
+  letter-spacing: 5px;
+  margin-bottom: 10px;
+}
+
+.top-wrapper p {
+    color: rgb(17, 245, 55);
+  opacity: 0.7;
+  margin-bottom: 3px;
+}
+
+.btn-wrapper {
+  margin: 50px 0;
+}
+
+.btn-wrapper p {
+  margin: 15px 0;
+}
+
+.signup {
+  background-color: #239b76;
+}
+
+
+
+body{
+    background-image: url("blue.jpg");
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-size: 100% 100%;
+}
+header {
+  height: 65px;
+  width: 100%;
+  background-color: rgba(34, 49, 52, 0.9);
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+.header-left{
+    float: left;
+
+}
+.header-right {
+  float: right;
+  background-color: rgba(14, 13, 13, 0.3);
+  transition: all 0.5s;
+}
+
+.header-right:hover {
+  background-color: rgba(228, 9, 9, 0.5);
+}
+
+.header-right a {
+  line-height: 65px;
+  padding: 0 35px;
+  color: white;
+  display: block;
+}
+
+
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-left">
+          <h2>TOURIST GUIDE</h2>
+        </div>
+        
+      </div>
+    </header>
+
+    <div class="top-wrapper">
+        <div class="container">
+        <p><h1>Welcome to our Support Center</h1></p>
+          <p><h2>How can We help you?</h2></p>
+          
+          <input class="req-input autocomplete-input" id="req" type="text" placeholder="Type your question here" @keyup="captureUserInput">
+          
+          <input class="contact-submit" type="submit" value="Submit">
+        </div>
+  
+    </body>
